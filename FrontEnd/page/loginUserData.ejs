@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="loginUserData.css">
+</head>
+
+<body>
+    <div class="adjust">
+        <div class="anc">
+            <a href="http://localhost:4000/signup">Register</a>
+            <a href="http://localhost:4000/loginPage">Login</a>
+            <a class="ancor" href="http://localhost:4000/alldata">All User Data</a>
+            <a href="http://localhost:4000/loginUserData">login User Data</a>
+            <a href="http://localhost:4000/updateloginUser">Update Data</a>
+            <a href="http://localhost:4000/logout">Log-Out</a>
+            <a href="http://localhost:4000/deleteuser">Delete login User</a>
+        </div>
+        <h1>Login User Data</h1>
+        <div class="card">
+            <% Datas.forEach(item=> { %>
+                <% if (item.Image.endsWith('.pdf')) { %>
+                    <iframe src="<%= item.Image %>"  frameborder="0"></iframe>                                            
+                  <% } else { %>
+                    <img src="<%= item.Image %>" alt="login user Image">
+                  <% } %>
+                <div class="container">
+                    <p><b>Employee_id :</b>
+                        <%= item.Employee_ID %>
+                    </p>
+                    <p><b>Name :</b>
+                        <%= item.Name %>
+                    </p>
+                    <p><b>Email :</b>
+                        <%= item.Email %>
+                    </p>
+                    <p><b>Address :</b>
+                        <%= item.Address %>
+                    </p>
+                    <p><b>Phone_Number :</b>
+                        <%= item.Phone_Number %>
+                    </p>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+
+</html>

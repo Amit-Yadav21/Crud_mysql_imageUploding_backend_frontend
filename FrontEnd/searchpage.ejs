@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Data</title>
+    <style>
+        input{
+            width: 80%;
+            height: 2rem;
+            font-size: 28px;
+            margin-left: 30px;
+            border-radius: 1rem; 
+        }
+        input[placeholder]{
+            text-align: center;
+        }
+        .search button{
+            margin-top: -20px;
+            border: 2px solid red;
+            height: 2rem;
+            border-radius: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="search">
+        <form action="/searchdata" method="post">
+            <input type="text" name="search" placeholder="search any data..." autocomplete="off">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+  <% if (data) { %>
+    <table>
+      <tr>
+        <th>Employee_ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Phone Number</th>
+        <th>Image</th>
+      </tr>
+      <% data.forEach(function(row) { %>
+        <tr>
+          <td><%= row.Employee_ID %></td>
+          <td><%= row.Name %></td>
+          <td><%= row.Email %></td>
+          <td><%= row.Address %></td>
+          <td><%= row.Phone_Number %></td>
+          <td><%= row.Image %></td>
+        </tr>
+      <% }); %>
+    </table>
+  <% } else { %>
+    <p>No results found.</p>
+  <% } %> 
+</body>
+</html>

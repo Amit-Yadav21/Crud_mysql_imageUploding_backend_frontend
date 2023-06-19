@@ -1,0 +1,60 @@
+<html>
+<head>
+  <title>User Registration</title>
+  <link rel="stylesheet" href="registerPage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="main">
+
+    <h1>User Registration</h1>
+    <form action="/signup" method="POST" enctype="multipart/form-data">
+      <div>
+        <input type="text" name="Name" placeholder="type your name here" autocomplete="off">
+      </div>
+      <div>
+        <input type="email" name="Email" placeholder="type youe Email here" autocomplete="off">
+      </div>
+      <div>
+        <input type="password" name="Password" placeholder="type your Password here" id="myInput" autocomplete="off">
+        <span class="eye" onclick="myFunction()">
+          <i id="hide1" class="fa fa-eye"></i>
+          <i id="hide2" class="fa fa-eye-slash"></i>
+        </span>
+      </div>
+      <div>
+        <input type="text" name="Address" placeholder="type your address here" autocomplete="off">
+      </div>
+      <div>
+        <input type="tel" name="Phone_Number" placeholder="type your Phone Number here" autocomplete="off">
+      </div>
+      <div>
+        <input type="file" name="Image">
+      </div><br>
+      <div>
+        <button type="submit">Register</button>
+        <a href="http://localhost:4000/loginPage">login</a>
+      </div>
+    </form>
+  </div>  
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myInput");
+      var y = document.getElementById("hide1");
+      var z = document.getElementById("hide2");
+
+      if (x.type === "password") {
+        x.type = "text";
+        y.style.display = "block";
+        z.style.display = "none";
+      }
+      else {
+        x.type = "password";
+        y.style.display = "none"
+        z.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>

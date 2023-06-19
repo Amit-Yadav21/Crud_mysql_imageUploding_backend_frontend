@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>User Data</title>
+  <link rel="stylesheet" href="AllUserData.css">  
+</head>
+
+<body>
+  <div class="anc">
+    <a href="http://localhost:4000/signup">Register</a>
+    <a href="http://localhost:4000/loginPage">Login</a>
+    <a class="ancor" href="http://localhost:4000/alldata">All User Data</a>
+    <a href="http://localhost:4000/loginUserData">login User Data</a>
+    <a href="http://localhost:4000/deleteAll">Delete All Data</a>
+    <!-- <a href="http://localhost:4000/searchdata">search User Data</a> -->
+  </div>
+  <h1>All User Data</h1>
+  <table class="table">
+    <tr>
+      <th>Employee ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <!-- <th>Password</th> -->
+      <th>Address</th>
+      <th>Phone_Number</th>
+      <th>Image</th>
+    </tr>
+
+    <% Datas.forEach(item=> { %>
+      <tr>
+        <td>
+          <%= item.Employee_ID %>
+        </td>
+        <td>
+          <%= item.Name %>
+        </td>
+        <td>
+          <%= item.Email %>
+        </td>
+        <!-- <td>
+          <%= item.Password %>
+        </td> -->
+        <td>
+          <%= item.Address %>
+        </td>
+        <td>
+          <%= item.Phone_Number %>
+        </td>
+        <td>
+          <% if (item.Image.endsWith('.pdf')) { %>
+                    <!-- <a href="<%= item.Image %>">View PDF</a> -->
+            <iframe src="<%= item.Image %>" width="100px" height="55px" frameborder="0" style="overflow-y:hidden;"></iframe>
+          <% } else { %>
+            <img src="<%= item.Image %>" alt="login user Image">
+          <% } %>
+        </td>
+      </tr>
+      <% }) %>
+  </table>
+</body>
+
+</html> 

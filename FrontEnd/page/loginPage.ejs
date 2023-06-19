@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <title>Login</title>
+  <link rel="stylesheet" href="loginPage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+  <div class="mainbox">
+    <h1>Login</h1>
+        <form method="POST" action="/login">
+          <div class="inputbox">
+            <label for="email" class="lbl">Email:</label>
+            <input type="email" id="gmail" name="Email" autocomplete="off" required>
+          </div> 
+          <div class="inputbox">
+            <label for="password" class="lbl">Password:</label>
+            <input type="password" name="Password" id="myInput" autocomplete="off" required>
+            <span class="eye" onclick="myFunction()">
+              <i id="hide1" class="fa fa-eye"></i>
+              <i id="hide2" class="fa fa-eye-slash"></i>
+            </span> 
+            <!-- <a href="/FrontEnd/page/forgetpassPage.ejs">forget password</a> -->
+          </div>
+          <div class="loginbtn">
+            <button type="submit" class="btn">Login</button>
+            <a href="http://localhost:4000/signup">Register</a>
+          </div>
+        </form>
+  </div>
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myInput");
+      var y = document.getElementById("hide1");
+      var z = document.getElementById("hide2");
+
+      if (x.type === "password") {
+        x.type = "text";
+        y.style.display = "block";
+        z.style.display = "none";
+      }
+      else {
+        x.type = "password";
+        y.style.display = "none"
+        z.style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+
+</html>

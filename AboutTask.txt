@@ -1,0 +1,58 @@
+Task – Create a model for employee data and APIs for creating the database, update, delete, search, logout login account.
+==================================================================================================================
+
+1.  Create a MongoDB/MySQL Model for an employee.
+
+·        Fields – Employee ID, Employee Name, Employee Email, Employee Address(Array of Objects – City, State, Country), Employee Phone Number
+
+--------------------------------------------------------------------------------------------------------------------
+2.  Create an POST API to create a new Employee document in database :
+ 
+·        Employee ID shall be an auto generated number, use increment function for this.
+·        Validate the API body and throw appropriate messages on the console.
+·        Use JWT Token for API Header authentication. Token expiry time 12 hours.
+.        use Join validaition ( signup,login ) router each column in your table .
+
+--------------------------------------------------------------------------------------------------------------------
+3.  Create an POST API to Search Employee Data:
+Note :- Password send database bcript formate
+Example :- Password : $2b$10$NCfe1LIxiu1/gOZIIMOsjO9vlZ5Dc3Wbf0PERxWm.XvGAXxqpD8Xu 
+....................................................................................................................
+Employee Id  |   Name    |        Email        |     Password    |   Address                      |   Phone Number |
+....................................................................................................................
+    1        |   Ramesh  |   ramesh@gmail.com  |        ---      |   Nagpur, Maharashtra, India   |   9875642310   |
+    2        |   Suresh  |   suresh@gmail.com  |        ---      |   Jaipur, Rajasthan, India     |   9875642310   |
+    3        |   Naresh  |   naresh@gmail.com  |        ---      |   Dehradun, Uttarakhand, India |   8794562130   |
+--------------------------------------------------------------------------------------------------------------------
+
+                Example – Search String – “mes” – Output -
+
+        Employee Id         Name            Email                   Address                         Phone Number
+        1                   Ramesh          ramesh@gmail.com        Nagpur, Maharashtra, India      9875642310
+       
+
+                Example – Search String – “than” – Output -
+
+        2                   Suresh          suresh@gmail.com        Jaipur, Rajasthan, India        9875642310
+
+---------------------------------------------------------------------------------------------------------------------
+
+4.      Create an DELETE API to Delete Employee Data using employee id.
+---------------------------------------------------------------------------------------------------------------------
+5.      Create a PUT API to edit employee phone numbers and email.
+---------------------------------------------------------------------------------------------------------------------
+6.      Upload image in your database and show localhost on browser .
+        User can upload images while signing up.
+        After signup user will login with email and password.
+        Whichever user is logged in, the same user can update, delete, logout their data.
+----------------------------------------------------------------------------------------------------------------------
+7.      JOI Vailidation for each field .
+----------------------------------------------------------------------------------------------------------------------
+8.      uploding image in mysql database using Multer . 
+----------------------------------------------------------------------------------------------------------------------
+note :- show frontend page on browser 
+        signup/Register page :- http://localhost:4000/signup
+        login page :- http://localhost:4000/loginPage
+        All User Data page :- href="http://localhost:4000/alldata
+        login user data page :- http://localhost:4000/loginUserData
+        Update data page :- http://localhost:4000/updateloginUser
